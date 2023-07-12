@@ -1,0 +1,22 @@
+color: 
+- orange: D64D00
+- gray (search bar): F5F5F5
+- purple: 5C59D4
+- orange (subscribe): F2A156
+- light gray (old price products): D4D4D4
+
+font:
+- font family: Rubik
+- font family (Lorem ipsum...): Open Sans
+- font size:
+	+ header: 20px
+	+ h1 (presentation): 72px
+	+ button search : 22px
+	+ h1 (material): 46px
+	+ h2 (check our product): 18px - color: orange
+	+ discount (percent): 16px
+	+ Add to cart: 16px
+	+ price: 18px
+
+- gap flex: 24px
+- gap between main elements: 112px
