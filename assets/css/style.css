@@ -1,6 +1,6 @@
 body {
   font-family: "Rubik", sans-serif;
-  width: 1440px;
+  /* width: 100%; */
   margin: 0 auto;
   font-size: 18px;
 }
@@ -11,16 +11,26 @@ header {
   font-size: 20px;
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 20px;
   border-bottom: 1px solid #e5e5e5;
   align-items: center;
+}
+.navbar-pages {
+  display: flex;
+  flex-direction: row;
+  column-gap: 52px;
 }
 .navbar {
   display: flex;
   flex-direction: row;
-  column-gap: 50px;
+  column-gap: 14px;
 }
-
+.collapse-icon {
+  display: none;
+}
+.logo-mobile {
+  display: none;
+}
 main {
   display: flex;
   flex-direction: column;
@@ -80,6 +90,9 @@ h2 {
   flex-direction: row;
   column-gap: 24px;
 }
+.slide-show-1-mobile {
+  display: none;
+}
 .brand-logos {
   display: flex;
   flex-direction: row;
@@ -87,6 +100,9 @@ h2 {
   margin: auto;
   justify-content: center;
   align-items: center;
+}
+.brand-logos-mobile {
+  display: none;
 }
 
 .products {
@@ -165,6 +181,9 @@ h2 {
   justify-content: center;
   color: #d64d00;
 }
+.add-to-cart-mobile {
+  display: none;
+}
 .add-to-cart-heading {
   color: #d64d00;
   font-size: 16px;
@@ -221,6 +240,15 @@ h2 {
   justify-content: space-between;
   align-items: center;
 }
+.quote-mobile {
+  display: none;
+}
+.user-avatar-mobile {
+  display: none;
+}
+.star-mobile {
+  display: none;
+}
 #review1 {
   height: 475px;
   min-width: 623px;
@@ -253,6 +281,9 @@ h2 {
   justify-content: center;
   row-gap: 10px;
   margin-left: 24px;
+}
+.shop-now-item-mobile {
+  display: none;
 }
 .shop-now-title h2 {
   width: 129px;
@@ -305,6 +336,9 @@ h2 {
   padding: 10px 20px;
   border-radius: 30px;
 }
+.navbar-item-mobile {
+  display: none;
+}
 #collection-navbar-item-current {
   background-color: #ededff;
 }
@@ -320,7 +354,9 @@ h2 {
   flex-direction: row;
   column-gap: 24px;
 }
-
+.galleries-item-mobile {
+  display: none;
+}
 .review {
   position: relative;
 }
@@ -330,6 +366,9 @@ h2 {
   flex-direction: row;
   column-gap: 50px;
   height: 505px;
+}
+.furniture-review-mobile {
+  display: none;
 }
 .user-review {
   margin-left: 100px;
@@ -341,6 +380,12 @@ h2 {
 }
 .subscribe {
   background-color: #f2a156;
+}
+.subscribe-mobile {
+  display: none;
+}
+.review-content {
+  color: #505050;
 }
 .user-title {
   display: flex;
@@ -439,6 +484,9 @@ h2 {
 footer {
   color: white;
 }
+.footer-logo-mobile {
+  display: none;
+}
 .footer-content {
   display: flex;
   flex-direction: row;
@@ -457,7 +505,9 @@ footer {
   font-weight: normal;
   text-align: left;
 }
-
+.table-mobile {
+  display: none;
+}
 thead {
   font-weight: bold;
 }
@@ -486,8 +536,411 @@ td {
   width: 1248px;
 }
 
-@media only screen and (max-width: 392px) {
+@media screen and (min-width: 1440px) {
   body {
-    font-family: "Rubik", sans-serif;
+    width: 1440px;
+  }
+}
+@media screen and (max-width: 400px) {
+  body {
+    width: 100%;
+    margin: 0 auto;
+  }
+  header {
+    font-size: 20px;
+    padding: 1rem;
+    border: 0
+  }
+  .navbar-pages {
+    display: none;
+  }
+  .navbar {
+    display: none;
+  }
+  .logo-desktop {
+    display: none;
+  }
+  .logo-mobile {
+    display: block;
+  }
+  .collapse-icon {
+    display: block;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 10px;
+  }
+  main {
+    row-gap: 2rem;
+  }
+  .presentation {
+    row-gap: 2rem;
+  }
+  .headline {
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: inline;
+  }
+  .form {
+    width: 281px;
+    padding: 0 0.5rem;
+    margin: 0 auto;
+  }
+  .input {
+    background-color: #f5f5f5;
+    border: 0;
+    font-size: 11px;
+    height: 45px;
+  }
+  .button {
+    padding: 0.5rem 0.5rem;
+    font-weight: bold;
+    border: 0;
+    font-size: 12px;
+  }
+  .table-img {
+    width: 126px;
+    height: 160px;
+  }
+  .slide-show-1 {
+    display: none;
+  }
+  .slide-show-1-mobile {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0;
+  }
+  .brand-logos {
+    display: none;
+  }
+  .brand-logos-mobile {
+    display: flex;
+    flex-direction: row;
+    column-gap: 17px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+  }
+  .products {
+    width: 341px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+  }
+  .middle-between-contents {
+    width: 114px;
+    font-size: 10px;
+  }
+  .middle-headings {
+    font-size: 20px;
+  }
+  .all-products {
+    grid-template-columns: repeat(2, 165px);
+    column-gap: 12px;
+    row-gap: 11px;
+  }
+  .thumbnail {
+    width: 151.35px;
+    height: 167.55px;
+    margin: auto;
+    padding: 5px;
+  }
+    #thumbnail1 {
+      background-image: url("../images/mobile/material/greenchair.png");
+    }
+  
+    #thumbnail2 {
+      background-image: url("../images/mobile/material/moderncupboard.png");
+    }
+  
+    #thumbnail3 {
+      background-image: url("../images/mobile/material/fabricchair.png");
+    }
+  
+    #thumbnail4 {
+      background-image: url("../images/mobile/material/armchair.png");
+    }
+  .discount {
+    width: 2rem;
+    height: 1rem;
+    line-height: 1rem;
+    font-size: 9px;
+  }
+  .product-item {
+    background-color: #f5f5f5;
+    text-align: center;
+    padding-top: 0.5rem;
+    width: 165px;
+  }
+  .add-to-cart-heading {
+    font-size: 10px;
+  }
+  .add-to-cart-desktop {
+    display: none;
+  }
+  .add-to-cart-mobile {
+    display: block
+  }
+  .product-name {
+    text-align: left;
+    font-size: 12px;
+  }
+  .product-all-prices {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.5rem;
+  }
+  .price {
+    font-size: 10px;
+  }
+  .user-reviews {
+    column-gap: 0.5rem;
+  }
+  .user-review-general {
+    padding: 2rem;
+  }
+  .user-review-general p {
+    font-size: 8px;
+  }
+  .quote-desktop {
+    display: none;
+  }
+  .quote-mobile {
+    display: block;
+  }
+  .user-avatar-desktop {
+    display: none;
+  }
+  .user-avatar-mobile {
+    display: block;
+  }
+  .star-desktop {
+    display: none;
+  }
+  .star-mobile {
+    display: block;
+  }
+  #review1 {
+    height: 155px;
+    min-width: 217px;
+  }
+  #review2 {
+    height: 177px;
+    min-width: 217px;
+  }
+  #review3 {
+    height: 168px;
+    min-width: 217px;
+  }
+  .shop-now {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    width: 100%;
+  }
+  .shop-now-item {
+    column-gap: 0;
+  }
+  .shop-now-item-desktop {
+    display: none;
+  }
+  .shop-now-item-mobile {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+    height: 180px;
+  }
+  .shop-now-item h2 {
+    font-size: 17px;
+  }
+  .shop-now-title h1{
+    font-size: 21px;
+  }
+
+  .collection {
+    row-gap: 2rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .collection-navbar {
+    width: 100%;
+    column-gap: 1rem;
+  }
+  .collection-navbar-item h1 {
+    font-size: 10px;
+  }
+  .collection-navbar-item {
+    padding: 0.5rem 0.5rem;
+    column-gap: 0.5rem;
+    border-radius: 2rem;
+  }
+  .navbar-item-desktop {
+    display: none;
+  }
+  .navbar-item-mobile {
+    display: block;
+  }
+
+  .galleries {
+    width: 341px;
+    row-gap: 0.5rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .galleries-row {
+    column-gap: 0.25rem;
+  }
+  .galleries-item-desktop {
+    display: none;
+  }
+  .galleries-item-mobile {
+    display: block;
+  }
+
+  .furniture-review-desktop {
+    display: none;
+  }
+  .furniture-review-mobile {
+    display: block;
+    background-color: #f5f5f5;
+    width: 100%;
+    padding-bottom: 8rem;
+  }
+  .our-furniture-review {
+    margin-top: 0;
+  }
+  .our-furniture-review-mobile h3{
+    font-size: 10px;
+    width: 60px;
+    text-align: center;
+    color: #5c59d4;
+    width: 5rem;
+  }
+  .our-furniture-review-mobile h1 {
+    font-size: 26px;
+    width: 55%;
+    font-weight: bold;
+  }
+  .our-furniture-review-mobile h2 {
+    font-size: 10px;
+    width: 60%;
+  }
+  .review-item-mobile {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+  .arrow-quote {
+    display: flex;
+    flex-direction: row;
+    column-gap: 4rem;
+    align-items: center;
+  }
+  .arrow-comma {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+  }
+  .review-arrow {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.5rem;
+    justify-content: start;
+  }
+  .user-title {
+    column-gap: 0.5rem;
+  }
+  .user-title-mobile h1 {
+    font-size: 10px;
+  }
+  .user-title-mobile h2 {
+    font-size: 10px;
+  }
+  .review-content {
+    font-size: 8px;
+    color: #505050;
+    width: 300px;
+  }
+
+  .subscribe-desktop {
+    display: none;
+  }
+  .subscribe-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 0;
+    padding-bottom: 2rem;
+    padding-top: 3rem;
+    margin-left: -2.5rem;
+  }
+  .subscribe-mobile h1 {
+    font-size: 16px;
+    width: 50%;
+    padding-right: 6rem;
+    margin: 0;
+  }
+  .sofa-review-mobile {
+    top: 22rem;
+  }
+  footer {
+    padding: 0;
+    width: 100%;
+    margin: auto;
+  }
+  .footer-content {
+    padding: 0;
+    width: fit-content;
+  }
+  .footer-logo-desktop {
+    display: none;
+  }
+  .footer-logo-mobile {
+    display: block;
+    padding-left: 1rem;
+  }
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    padding-bottom: 2rem;
+    padding-top: 3rem;
+    padding-left: 1rem;
+  }
+  .footer-logo h1 {
+    font-size: 14px;
+    width: 80%;
+    padding-left: 1rem;
+  }
+  .table-desktop {
+    display: none;
+  }
+  .table-mobile {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    column-gap: 1rem;
+    padding-left: 1rem
+  }
+  .table-mobile h1 {
+    font-size: 18px;
+    text-align: left;
+  }
+  .table-mobile h2 {
+    font-size: 16px;
+    color: white;
+    text-align: left;
+  }
+  .copyright {
+    width: 80%;
+    margin: 0 auto;
   }
 }
