@@ -541,7 +541,7 @@ td {
     width: 1440px;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 392px) {
   body {
     width: 100%;
     margin: 0 auto;
@@ -615,7 +615,9 @@ td {
   .slide-show-1-mobile {
     display: flex;
     flex-direction: row;
-    column-gap: 0;
+    justify-content: space-between;
+    margin: auto;
+    width: 100%;
   }
   .brand-logos {
     display: none;
@@ -704,6 +706,9 @@ td {
   .user-reviews {
     column-gap: 0.5rem;
   }
+  .customer-review {
+    row-gap: 1.5rem;
+  }
   .user-review-general {
     padding: 2rem;
   }
@@ -744,7 +749,7 @@ td {
     display: flex;
     flex-direction: column;
     row-gap: 2rem;
-    width: 100%;
+    width: 90%;
   }
   .shop-now-item {
     column-gap: 0;
@@ -760,6 +765,7 @@ td {
   }
   .shop-now-item h2 {
     font-size: 17px;
+    width: 109px;
   }
   .shop-now-title h1{
     font-size: 21px;
@@ -897,8 +903,14 @@ td {
     margin: auto;
   }
   .footer-content {
-    padding: 0;
     width: fit-content;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: 0;
+    padding-bottom: 2rem;
+    padding-top: 3rem;
+    padding-left: 1rem;
   }
   .footer-logo-desktop {
     display: none;
@@ -907,14 +919,7 @@ td {
     display: block;
     padding-left: 1rem;
   }
-  .footer-content {
-    display: flex;
-    flex-direction: column;
-    row-gap: 2rem;
-    padding-bottom: 2rem;
-    padding-top: 3rem;
-    padding-left: 1rem;
-  }
+  
   .footer-logo h1 {
     font-size: 14px;
     width: 80%;
@@ -926,13 +931,13 @@ td {
   .table-mobile {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-    column-gap: 1rem;
+    column-gap: 5rem;
     padding-left: 1rem
   }
   .table-mobile h1 {
     font-size: 18px;
     text-align: left;
+    width: max-content;
   }
   .table-mobile h2 {
     font-size: 16px;
