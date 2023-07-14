@@ -15,6 +15,9 @@ header {
   border-bottom: 1px solid #e5e5e5;
   align-items: center;
 }
+.mobile {
+  display: none;
+}
 .navbar-pages {
   display: flex;
   flex-direction: row;
@@ -26,9 +29,6 @@ header {
   column-gap: 14px;
 }
 .collapse-icon {
-  display: none;
-}
-.logo-mobile {
   display: none;
 }
 main {
@@ -90,9 +90,6 @@ h2 {
   flex-direction: row;
   column-gap: 24px;
 }
-.slide-show-1-mobile {
-  display: none;
-}
 .brand-logos {
   display: flex;
   flex-direction: row;
@@ -100,9 +97,6 @@ h2 {
   margin: auto;
   justify-content: center;
   align-items: center;
-}
-.brand-logos-mobile {
-  display: none;
 }
 
 .products {
@@ -181,9 +175,6 @@ h2 {
   justify-content: center;
   color: #d64d00;
 }
-.add-to-cart-mobile {
-  display: none;
-}
 .add-to-cart-heading {
   color: #d64d00;
   font-size: 16px;
@@ -240,15 +231,6 @@ h2 {
   justify-content: space-between;
   align-items: center;
 }
-.quote-mobile {
-  display: none;
-}
-.user-avatar-mobile {
-  display: none;
-}
-.star-mobile {
-  display: none;
-}
 #review1 {
   height: 475px;
   min-width: 623px;
@@ -281,9 +263,6 @@ h2 {
   justify-content: center;
   row-gap: 10px;
   margin-left: 24px;
-}
-.shop-now-item-mobile {
-  display: none;
 }
 .shop-now-title h2 {
   width: 129px;
@@ -336,10 +315,12 @@ h2 {
   padding: 10px 20px;
   border-radius: 30px;
 }
-.navbar-item-mobile {
-  display: none;
+.collection-navbar-item:hover {
+  background-color: #ededff;
+  transition: ease-in-out 0.3s;
+  cursor: pointer;
 }
-#collection-navbar-item-current {
+.collection-navbar-item-current {
   background-color: #ededff;
 }
 .galleries {
@@ -354,9 +335,6 @@ h2 {
   flex-direction: row;
   column-gap: 24px;
 }
-.galleries-item-mobile {
-  display: none;
-}
 .review {
   position: relative;
 }
@@ -366,9 +344,6 @@ h2 {
   flex-direction: row;
   column-gap: 50px;
   height: 505px;
-}
-.furniture-review-mobile {
-  display: none;
 }
 .user-review {
   margin-left: 100px;
@@ -380,9 +355,6 @@ h2 {
 }
 .subscribe {
   background-color: #f2a156;
-}
-.subscribe-mobile {
-  display: none;
 }
 .review-content {
   color: #505050;
@@ -484,9 +456,6 @@ h2 {
 footer {
   color: white;
 }
-.footer-logo-mobile {
-  display: none;
-}
 .footer-content {
   display: flex;
   flex-direction: row;
@@ -504,9 +473,6 @@ footer {
   width: 219px;
   font-weight: normal;
   text-align: left;
-}
-.table-mobile {
-  display: none;
 }
 thead {
   font-weight: bold;
@@ -551,13 +517,16 @@ td {
     padding: 1rem;
     border: 0
   }
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
   .navbar-pages {
     display: none;
   }
   .navbar {
-    display: none;
-  }
-  .logo-desktop {
     display: none;
   }
   .logo-mobile {
@@ -685,9 +654,7 @@ td {
   .add-to-cart-heading {
     font-size: 10px;
   }
-  .add-to-cart-desktop {
-    display: none;
-  }
+
   .add-to-cart-mobile {
     display: block
   }
@@ -715,20 +682,11 @@ td {
   .user-review-general p {
     font-size: 8px;
   }
-  .quote-desktop {
-    display: none;
-  }
   .quote-mobile {
     display: block;
   }
-  .user-avatar-desktop {
-    display: none;
-  }
   .user-avatar-mobile {
     display: block;
-  }
-  .star-desktop {
-    display: none;
   }
   .star-mobile {
     display: block;
@@ -753,9 +711,6 @@ td {
   }
   .shop-now-item {
     column-gap: 0;
-  }
-  .shop-now-item-desktop {
-    display: none;
   }
   .shop-now-item-mobile {
     display: flex;
@@ -788,9 +743,6 @@ td {
     column-gap: 0.5rem;
     border-radius: 2rem;
   }
-  .navbar-item-desktop {
-    display: none;
-  }
   .navbar-item-mobile {
     display: block;
   }
@@ -804,15 +756,8 @@ td {
   .galleries-row {
     column-gap: 0.25rem;
   }
-  .galleries-item-desktop {
-    display: none;
-  }
   .galleries-item-mobile {
     display: block;
-  }
-
-  .furniture-review-desktop {
-    display: none;
   }
   .furniture-review-mobile {
     display: block;
@@ -875,10 +820,6 @@ td {
     color: #505050;
     width: 300px;
   }
-
-  .subscribe-desktop {
-    display: none;
-  }
   .subscribe-mobile {
     display: flex;
     flex-direction: column;
@@ -895,7 +836,7 @@ td {
     margin: 0;
   }
   .sofa-review-mobile {
-    top: 22rem;
+    top: 19.5rem;
   }
   footer {
     padding: 0;
@@ -912,9 +853,6 @@ td {
     padding-top: 3rem;
     padding-left: 1rem;
   }
-  .footer-logo-desktop {
-    display: none;
-  }
   .footer-logo-mobile {
     display: block;
     padding-left: 1rem;
@@ -924,9 +862,6 @@ td {
     font-size: 14px;
     width: 80%;
     padding-left: 1rem;
-  }
-  .table-desktop {
-    display: none;
   }
   .table-mobile {
     display: grid;
