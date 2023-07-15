@@ -196,13 +196,25 @@ h2 {
   font-weight: bold;
 }
 
+.user-reviews-container {
+  position: relative;
+  overflow: hidden;
+  cursor: grab;
+  min-height: 500px;
+  min-width: 100%;
+}
 .user-reviews {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   column-gap: 24px;
   position: relative;
-  align-items: center;
-  overflow-x: auto;
+  align-items: center; */
+  pointer-events: none;
+  /* overflow-x: auto; */
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 24px;
 }
 /* .user-reviews::-webkit-scrollbar {
   display: none;
@@ -211,6 +223,7 @@ h2 {
 .user-review-general {
   background-color: white;
   padding: 40px;
+  overflow: hidden;
 }
 
 .customer-review {
@@ -515,7 +528,7 @@ td {
   header {
     font-size: 20px;
     padding: 1rem;
-    border: 0
+    border: 0;
   }
   .desktop {
     display: none;
@@ -624,21 +637,21 @@ td {
     margin: auto;
     padding: 5px;
   }
-    #thumbnail1 {
-      background-image: url("../images/mobile/material/greenchair.png");
-    }
-  
-    #thumbnail2 {
-      background-image: url("../images/mobile/material/moderncupboard.png");
-    }
-  
-    #thumbnail3 {
-      background-image: url("../images/mobile/material/fabricchair.png");
-    }
-  
-    #thumbnail4 {
-      background-image: url("../images/mobile/material/armchair.png");
-    }
+  #thumbnail1 {
+    background-image: url("../images/mobile/material/greenchair.png");
+  }
+
+  #thumbnail2 {
+    background-image: url("../images/mobile/material/moderncupboard.png");
+  }
+
+  #thumbnail3 {
+    background-image: url("../images/mobile/material/fabricchair.png");
+  }
+
+  #thumbnail4 {
+    background-image: url("../images/mobile/material/armchair.png");
+  }
   .discount {
     width: 2rem;
     height: 1rem;
@@ -656,7 +669,7 @@ td {
   }
 
   .add-to-cart-mobile {
-    display: block
+    display: block;
   }
   .product-name {
     text-align: left;
@@ -722,7 +735,7 @@ td {
     font-size: 17px;
     width: 109px;
   }
-  .shop-now-title h1{
+  .shop-now-title h1 {
     font-size: 21px;
   }
 
@@ -768,7 +781,7 @@ td {
   .our-furniture-review {
     margin-top: 0;
   }
-  .our-furniture-review-mobile h3{
+  .our-furniture-review-mobile h3 {
     font-size: 10px;
     width: 60px;
     text-align: center;
@@ -857,7 +870,7 @@ td {
     display: block;
     padding-left: 1rem;
   }
-  
+
   .footer-logo h1 {
     font-size: 14px;
     width: 80%;
@@ -867,7 +880,7 @@ td {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 5rem;
-    padding-left: 1rem
+    padding-left: 1rem;
   }
   .table-mobile h1 {
     font-size: 18px;
