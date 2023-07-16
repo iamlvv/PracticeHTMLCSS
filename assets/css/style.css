@@ -202,30 +202,49 @@ h2 {
   cursor: grab;
   min-height: 500px;
   min-width: 100%;
+  scroll-behavior: smooth;
 }
 .user-reviews {
-  /* display: flex;
+  /*display: flex;
   flex-direction: row;
   column-gap: 24px;
-  position: relative;
-  align-items: center; */
-  pointer-events: none;
-  /* overflow-x: auto; */
-  position: absolute;
+  align-items: center;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  column-gap: 24px;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  pointer-events: none;
+  position: absolute;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  overflow: hidden; */
+  display: grid;
+  grid-auto-flow: column;
+  //grid-auto-columns: calc((100% / 3) - 12px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  border-radius: 8px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
 }
-/* .user-reviews::-webkit-scrollbar {
+
+.user-reviews::-webkit-scrollbar {
   display: none;
-} */
+}
+.user-reviews.no-transition {
+  scroll-behavior: smooth;
+}
+.user-reviews.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: smooth;
+}
 
 .user-review-general {
   background-color: white;
   padding: 40px;
   overflow: hidden;
+  user-select: none;
 }
-
 .customer-review {
   background-color: #f5f5f5;
   padding: 40px 0;
@@ -246,17 +265,24 @@ h2 {
 }
 #review1 {
   height: 475px;
-  min-width: 623px;
+  width: 623px;
 }
 #review2 {
   height: 391px;
-  min-width: 623px;
+  width: 623px;
 }
 #review3 {
   height: 419px;
-  min-width: 623px;
+  width: 623px;
 }
-
+#review4 {
+  height: 475px;
+  width: 623px;
+}
+#review5 {
+  height: 475px;
+  width: 623px;
+}
 .shop-now {
   width: 1248px;
   display: grid;
@@ -358,13 +384,17 @@ h2 {
   column-gap: 50px;
   height: 505px;
 }
-.user-review {
+.user-review-item {
+  transition: all 0.5s;
+}
+.user-review-current {
+  display: block;
   margin-left: 100px;
   margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
   width: 539px;
+}
+.user-review {
+  display: none;
 }
 .subscribe {
   background-color: #f2a156;
@@ -410,6 +440,15 @@ h2 {
   display: flex;
   flex-direction: row;
   column-gap: 20px;
+}
+.left-arrow,
+.right-arrow {
+  cursor: pointer;
+}
+.arrow-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 .our-furniture-review {
   display: flex;
@@ -564,12 +603,6 @@ td {
     margin-top: 2rem;
     margin-bottom: 0;
   }
-  .desktop {
-    display: none;
-  }
-  .mobile {
-    display: inline;
-  }
   .form {
     width: 281px;
     padding: 0 0.5rem;
@@ -580,6 +613,11 @@ td {
     border: 0;
     font-size: 11px;
     height: 45px;
+  }
+  .input-field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
   .button {
     padding: 0.5rem 0.5rem;
@@ -685,6 +723,10 @@ td {
   }
   .user-reviews {
     column-gap: 0.5rem;
+    pointer-events: auto;
+  }
+  .user-reviews-container {
+    min-height: 177px;
   }
   .customer-review {
     row-gap: 1.5rem;
@@ -695,26 +737,30 @@ td {
   .user-review-general p {
     font-size: 8px;
   }
-  .quote-mobile {
-    display: block;
-  }
-  .user-avatar-mobile {
-    display: block;
-  }
-  .star-mobile {
-    display: block;
+
+  .grabbing {
+    cursor: grab;
+    scroll-behavior: auto;
   }
   #review1 {
     height: 155px;
-    min-width: 217px;
+    width: 217px;
   }
   #review2 {
     height: 177px;
-    min-width: 217px;
+    width: 217px;
   }
   #review3 {
     height: 168px;
-    min-width: 217px;
+    width: 217px;
+  }
+  #review4 {
+    height: 155px;
+    width: 217px;
+  }
+  #review5 {
+    height: 155px;
+    width: 217px;
   }
   .shop-now {
     display: flex;
@@ -819,13 +865,17 @@ td {
     column-gap: 0.5rem;
     justify-content: start;
   }
+  .user-review-current-mobile {
+    display: flex;
+    flex-direction: column;
+  }
   .user-title {
     column-gap: 0.5rem;
   }
-  .user-title-mobile h1 {
+  .user-title h1 {
     font-size: 10px;
   }
-  .user-title-mobile h2 {
+  .user-title h2 {
     font-size: 10px;
   }
   .review-content {

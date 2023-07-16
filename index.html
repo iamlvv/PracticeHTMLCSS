@@ -44,10 +44,16 @@
                     <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h2>
                 </div>
                 <form class = "form">
-                        <div>
+                        <div class="input-field">
+                           <div>
                             <img src="assets/images/presentation/searchicon.png" alt="searchicon" class="desktop">
-                            <img src ="assets/images/mobile/presentation/searchicon.png" alt = "searchicon" class="mobile">
-                            <input type="text" placeholder="Search your property" class="input" />
+                           </div>
+                           <div>
+                            <img src="assets/images/mobile/presentation/searchicon.png" alt="searchicon" class="mobile">
+                           </div>
+                            <div>
+                                <input type="text" placeholder="Search your property" class="input" />
+                            </div>
                         </div>
                         <div>
                             <button type="submit" class="search-button button">Search</button>
@@ -279,12 +285,12 @@
                 </div>
                 <div class="user-reviews-container">
                     <div class="user-reviews">
-                        <div class="user-review-general" id="review1">
+                        <div class="user-review-general" id="review1" draggable="false">
                             <div>
                                 <img src="assets/images/reviews/doublecomma.png" alt="doublecomma" class="quote-desktop desktop">
                                 <img src="assets/images/mobile/user/quote.png" alt="quote" class="quote-mobile mobile">
                             </div>
-                            <p>
+                            <p class="desktop">
                                 I've always been hesitant about buying furniture online, but this website exceeded my expectations. The
                                 selection is
                                 incredible, offering a wide range of styles to suit any taste. The detailed product descriptions and
@@ -294,6 +300,18 @@
                                 result. The quality is superb, and it's even more beautiful in person. I'm grateful for the excellent
                                 customer service
                                 throughout the process. This website has won my trust, and I'll be recommending it to all my friends!
+                            </p>
+                            <p class="mobile">
+                                I recently purchased furniture from this website, and I couldn't be happier with my experience. The quality
+                                of
+                                the
+                                furniture is outstanding, and it arrived exactly as described. The customer service was top-notch, with
+                                prompt
+                                and
+                                helpful responses to all my inquiries. I highly recommend this website for anyone looking to buy furniture
+                                for
+                                their
+                                home.
                             </p>
                             <div class="user-rate">
                                 <div class="user-item">
@@ -309,7 +327,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="user-review-general" id="review2">
+                        <div class="user-review-general" id="review2" draggable="false">
                             <div>
                                 <img src="assets/images/reviews/doublecomma.png" alt="doublecomma" class="quote-desktop desktop">
                                 <img src="assets/images/mobile/user/quote.png" alt="quote" class="quote-mobile mobile">
@@ -340,7 +358,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="user-review-general" id="review3">
+                        <div class="user-review-general" id="review3" draggable="false">
                             <div>
                                 <img src="assets/images/reviews/doublecomma.png" alt="doublecomma" class="quote-desktop desktop">
                                 <img src="assets/images/mobile/user/quote.png" alt="quote" class="quote-mobile mobile">
@@ -368,12 +386,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="user-review-general" id="review4">
+                        <div class="user-review-general" id="review4" draggable="false">
                             <div>
                                 <img src="assets/images/reviews/doublecomma.png" alt="doublecomma" class="quote-desktop desktop">
                                 <img src="assets/images/mobile/user/quote.png" alt="quote" class="quote-mobile mobile">
                             </div>
-                            <p>
+                            <p class="desktop">
                                 I've always been hesitant about buying furniture online, but this website exceeded my expectations. The
                                 selection is
                                 incredible, offering a wide range of styles to suit any taste. The detailed product descriptions and
@@ -383,6 +401,18 @@
                                 result. The quality is superb, and it's even more beautiful in person. I'm grateful for the excellent
                                 customer service
                                 throughout the process. This website has won my trust, and I'll be recommending it to all my friends!
+                            </p>
+                            <p class="mobile">
+                                I recently purchased furniture from this website, and I couldn't be happier with my experience. The quality
+                                of
+                                the
+                                furniture is outstanding, and it arrived exactly as described. The customer service was top-notch, with
+                                prompt
+                                and
+                                helpful responses to all my inquiries. I highly recommend this website for anyone looking to buy furniture
+                                for
+                                their
+                                home.
                             </p>
                             <div class="user-rate">
                                 <div class="user-item">
@@ -398,12 +428,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="user-review-general" id="review5">
+                        <div class="user-review-general" id="review5" draggable="false">
                             <div>
                                 <img src="assets/images/reviews/doublecomma.png" alt="doublecomma" class="quote-desktop desktop">
                                 <img src="assets/images/mobile/user/quote.png" alt="quote" class="quote-mobile mobile">
                             </div>
-                            <p>
+                            <p class="desktop">
                                 I've always been hesitant about buying furniture online, but this website exceeded my expectations. The
                                 selection is
                                 incredible, offering a wide range of styles to suit any taste. The detailed product descriptions and
@@ -413,6 +443,18 @@
                                 result. The quality is superb, and it's even more beautiful in person. I'm grateful for the excellent
                                 customer service
                                 throughout the process. This website has won my trust, and I'll be recommending it to all my friends!
+                            </p>
+                            <p class="mobile">
+                                I recently purchased furniture from this website, and I couldn't be happier with my experience. The quality
+                                of
+                                the
+                                furniture is outstanding, and it arrived exactly as described. The customer service was top-notch, with
+                                prompt
+                                and
+                                helpful responses to all my inquiries. I highly recommend this website for anyone looking to buy furniture
+                                for
+                                their
+                                home.
                             </p>
                             <div class="user-rate">
                                 <div class="user-item">
@@ -530,22 +572,63 @@
             </div>
             <div class="review">
                 <div class="furniture-review furniture-review-desktop desktop">
-                    <div class="user-review">
-                        <div class="user-title">
+                    <div class="furniture-user-reviews">
+                        <div class="user-review-current user-review-item">
+                            <div class="user-title">
+                                <div>
+                                    <img src="assets/images/review/userimage.png" alt="userimage">
+                                </div>
+                                <div class="user-name">
+                                    <h1>Kim Shan Dhi</h1>
+                                    <h2>Directur Google Inc.</h2>
+                                </div>
+                            </div>
+                            <div class="review-content">
+                                I've always been hesitant about buying furniture online, but this website exceeded my expectations. The
+                                selection is
+                                incredible, offering a wide range of styles to suit any taste.
+                            </div>
                             <div>
-                                <img src = "assets/images/review/userimage.png" alt = "userimage">
-                            </div>
-                            <div class="user-name">
-                                <h1>Kim Shan Dhi</h1>
-                                <h2>Directur Google Inc.</h2>
+                                <img src="assets/images/reviews/star1.png" alt="star1">
                             </div>
                         </div>
-                        <div class="review-content">
-                            I've always been hesitant about buying furniture online, but this website exceeded my expectations. The selection is
-                            incredible, offering a wide range of styles to suit any taste.
+                        <div class="user-review user-review-item">
+                            <div class="user-title">
+                                <div>
+                                    <img src="assets/images/reviews/johny.png" alt="johny">
+                                </div>
+                                <div class="user-name">
+                                    <h1>Johny Assloy</h1>
+                                    <h2>Directur Google Inc.</h2>
+                                </div>
+                            </div>
+                            <div class="review-content">
+                                I've always been hesitant about buying furniture online, but this website exceeded my expectations. The
+                                selection is
+                                incredible, offering a wide range of styles to suit any taste. This is Johny!
+                            </div>
+                            <div>
+                                <img src="assets/images/reviews/star1.png" alt="star1">
+                            </div>
                         </div>
-                        <div>
-                            <img src="assets/images/reviews/star1.png" alt="star1">
+                        <div class="user-review user-review-item">
+                            <div class="user-title">
+                                <div>
+                                    <img src="assets/images/reviews/Mask group.png" alt="sarah">
+                                </div>
+                                <div class="user-name">
+                                    <h1>Sarah H</h1>
+                                    <h2>Directur Google Inc.</h2>
+                                </div>
+                            </div>
+                            <div class="review-content">
+                                I've always been hesitant about buying furniture online, but this website exceeded my expectations. The
+                                selection is
+                                incredible, offering a wide range of styles to suit any taste. This is Sarah!
+                            </div>
+                            <div>
+                                <img src="assets/images/reviews/star1.png" alt="star1">
+                            </div>
                         </div>
                     </div>
                     <div class="arrow-comma"> 
@@ -553,10 +636,10 @@
                             <div></div>
                             <div class="arrows">
                                 <div>
-                                    <img src="assets/images/review/leftarrow.png" alt="leftarrow">
+                                    <img src="assets/images/review/leftarrow.png" alt="leftarrow" class="left-arrow">
                                 </div>
                                 <div>
-                                    <img src="assets/images/review/rightarrow.png" alt="rightarrow">
+                                    <img src="assets/images/review/rightarrow.png" alt="rightarrow" class="right-arrow">
                                 </div>
                             </div>
                         </div>
@@ -585,19 +668,10 @@
                                 <div class="arrow-comma">
                                     <div class="review-arrow">
                                         <div>
-                                            <img src="assets/images/mobile/furniturereview/leftarrow.png" alt="leftarrow">
+                                            <img src="assets/images/mobile/furniturereview/leftarrow.png" alt="leftarrow" class="left-arrow-mobile">
                                         </div>
                                         <div>
-                                            <img src="assets/images/mobile/furniturereview/rightarrow.png" alt="rightarrow">
-                                        </div>
-                                    </div>
-                                    <div class="user-title user-title-mobile">
-                                        <div>
-                                            <img src="assets/images/mobile/user/kimshandhi.png" alt="userimage">
-                                        </div>
-                                        <div class="user-name">
-                                            <h1>Kim Shan Dhi</h1>
-                                            <h2>Directur Google Inc.</h2>
+                                            <img src="assets/images/mobile/furniturereview/rightarrow.png" alt="rightarrow" class="right-arrow-mobile">
                                         </div>
                                     </div>
                                 </div>
@@ -605,17 +679,69 @@
                                     <img src="assets/images/mobile/user/bigquote.png" alt="bigquote">
                                 </div>
                             </div>
-                            <div class="review-content">
-                                <p>
-                                    I've always been hesitant about buying furniture online, but this website exceeded my expectations. The
-                                    selection is
-                                    incredible, offering a wide range of styles to suit any taste.
-                                </p>
-                                <div>
-                                    <img src="assets/images/mobile/user/bigstar.png" alt="star">
+                            <div class="user-review-items-mobile user-review-current-mobile">
+                                <div class="user-title">
+                                    <div>
+                                        <img src="assets/images/mobile/user/kimshandhi.png" alt="userimage">
+                                    </div>
+                                    <div class="user-name">
+                                        <h1>Kim Shan Dhi</h1>
+                                        <h2>Directur Google Inc.</h2>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p>
+                                        I've always been hesitant about buying furniture online, but this website exceeded my expectations. The
+                                        selection is
+                                        incredible, offering a wide range of styles to suit any taste.
+                                    </p>
+                                    <div>
+                                        <img src="assets/images/mobile/user/bigstar.png" alt="star">
+                                    </div>
                                 </div>
                             </div>
-                        
+                            <div class="user-review-items-mobile user-review">
+                                <div class="user-title ">
+                                    <div>
+                                        <img src="assets/images/mobile/user/kimshandhi.png" alt="userimage">
+                                    </div>
+                                    <div class="user-name">
+                                        <h1>Johnny Asslyo</h1>
+                                        <h2>Directur Google Inc.</h2>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p>
+                                        I've always been hesitant about buying furniture online, but this website exceeded my expectations. The
+                                        selection is
+                                        incredible, offering a wide range of styles to suit any taste. This is Johny!
+                                    </p>
+                                    <div>
+                                        <img src="assets/images/mobile/user/bigstar.png" alt="star">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="user-review-items-mobile user-review">
+                                <div class=" user-title">
+                                    <div>
+                                        <img src="assets/images/mobile/user/kimshandhi.png" alt="userimage">
+                                    </div>
+                                    <div class="user-name">
+                                        <h1>Sarah H</h1>
+                                        <h2>Directur Google Inc.</h2>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p>
+                                        I've always been hesitant about buying furniture online, but this website exceeded my expectations. The
+                                        selection is
+                                        incredible, offering a wide range of styles to suit any taste. This is Sarah
+                                    </p>
+                                    <div>
+                                        <img src="assets/images/mobile/user/bigstar.png" alt="star">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="sofa-review sofa-review-mobile">
@@ -631,7 +757,7 @@
                         <button type="submit" class="subscribe-button button">Subscribe</button>
                     </form>
                 </div> -->
-                <div class="subscribe subscribe-mobile mobile">
+                <div class="subscribe subscribe-mobile mobile ">
                     <h1>Subscribe to get attractive offers on our products</h1>
                     <form class="form">
                         <div>

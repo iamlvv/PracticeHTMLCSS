@@ -69,44 +69,183 @@ collectionNavbarItem.forEach((item) => {
   });
 });
 
-// Build draggable slider using vanilla javascript
+// Build draggable slider using vanilla javascript and responsive for mobile
 const userReviewsContainer = document.querySelector(".user-reviews-container");
 const userReviews = document.querySelector(".user-reviews");
+const firstItemUserReview = document.querySelectorAll(".user-review-general")[0];
+const userReviewsChildren = [...userReviews.children];
 
-let isPressedDown = false;
-let cursorXSpace;
+let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
 
-userReviewsContainer.addEventListener("mousedown", (e) => {
-  isPressedDown = true;
-  cursorXSpace = e.offsetX - userReviews.offsetLeft;
-  userReviewsContainer.style.cursor = "grabbing";
-});
+let cardPerView = Math.round(userReviewsContainer.clientWidth / firstItemUserReview.clientWidth);
 
-userReviewsContainer.addEventListener("mouseup", () => {
-  // isPressedDown = false;
-  userReviewsContainer.style.cursor = "grab";
-});
-window.addEventListener("mouseup", () => {
-  isPressedDown = false;
-});
-
-userReviewsContainer.addEventListener("mousemove", (e) => {
-  if (!isPressedDown) return;
-  e.preventDefault();
-  userReviews.style.left = `${e.offsetX - cursorXSpace}px`;
-  boundary();
-});
-
-
-function boundary() {
-  const container = userReviewsContainer.getBoundingClientRect();
-  const general = userReviews.getBoundingClientRect();
-
-  if (parseInt(userReviews.style.left) > 0) {
-    userReviews.style.left = "0px";
-  } else if (general.right < container.right) {
-    userReviews.style.left = `-${general.width - container.width}px`;
-  }
+const dragStart = (e) => {
+  isDragging = true;
+  userReviews.classList.add("dragging");
+  startX = e.pageX;
+  startScrollLeft = userReviews.scrollLeft;
 }
 
+const dragging = (e) => {
+  if (!isDragging) return;
+  userReviews.scrollLeft = startScrollLeft - (e.pageX - startX);
+}
+
+const dragStop = () => {
+  isDragging = false;
+  userReviews.classList.remove("dragging");
+}
+
+// const autoPlay = () => {
+//   if (window.innerWidth < 768 || !isAutoPlay) return;
+//   timeoutId = setTimeout(() => {
+//     userReviews.scrollLeft += firstItemUserReview.clientWidth;
+//   }, 3000);
+// }
+// autoPlay();
+
+userReviews.addEventListener("mousedown", dragStart);
+userReviews.addEventListener("mousemove", dragging);
+userReviews.addEventListener("mouseup", dragStop);
+userReviews.addEventListener("mouseenter", () => isAutoPlay = false);
+userReviews.addEventListener("mouseleave", () => isAutoPlay = true);
+
+// Click arrow to move to the next item in the userReviews array
+const userFurnitureReviews = document.querySelectorAll(".user-review-item");
+const leftArrow = document.querySelector(".left-arrow");
+const rightArrow = document.querySelector(".right-arrow");
+leftArrow.classList.add("arrow-disabled");
+let currentItem = 0;
+
+leftArrow.addEventListener("click", () => {
+  // move to the previous item in the userFurnitureReviews array
+  if (currentItem <= 0) {
+    leftArrow.classList.add("arrow-disabled");
+  }
+  else {
+    leftArrow.classList.remove("arrow-disabled");
+    rightArrow.classList.remove("arrow-disabled");
+  }
+  userFurnitureReviews.forEach((review, index) => {
+    if (review.classList.contains("user-review-current")) {
+      currentItem = index;
+      review.classList.remove("user-review-current");
+      review.classList.add("user-review")
+    }
+  }
+  );
+  currentItem -= 1;
+  userFurnitureReviews[currentItem].classList.remove("user-review");
+  userFurnitureReviews[currentItem].classList.add("user-review-current");
+  if (currentItem <= 0) {
+    leftArrow.classList.add("arrow-disabled");
+  }
+  else {
+    leftArrow.classList.remove("arrow-disabled");
+    rightArrow.classList.remove("arrow-disabled");
+  }
+}
+);
+
+rightArrow.addEventListener("click", () => {
+  // move to the next item in the userFurnitureReviews array
+  if (currentItem >= userFurnitureReviews.length - 1) {
+    currentItem = userFurnitureReviews.length - 1;
+    rightArrow.classList.add("arrow-disabled");
+  }
+  else {
+    rightArrow.classList.remove("arrow-disabled");
+    leftArrow.classList.remove("arrow-disabled");
+  }
+  userFurnitureReviews.forEach((review, index) => {
+    if (review.classList.contains("user-review-current")) {
+      currentItem = index;
+      review.classList.remove("user-review-current");
+      review.classList.add("user-review")
+    }
+  }
+  );
+  currentItem += 1;
+  userFurnitureReviews[currentItem].classList.remove("user-review");
+  userFurnitureReviews[currentItem].classList.add("user-review-current");
+  if (currentItem >= userFurnitureReviews.length - 1) {
+    rightArrow.classList.add("arrow-disabled");
+  }
+  else {
+    rightArrow.classList.remove("arrow-disabled");
+    leftArrow.classList.remove("arrow-disabled");
+  }
+}
+);
+
+
+// Click arrows to move to the next item in the userReviews array in mobile
+const userFurnitureReviewsMobile = document.querySelectorAll(".user-review-items-mobile");
+const leftArrowMobile = document.querySelector(".left-arrow-mobile");
+const rightArrowMobile = document.querySelector(".right-arrow-mobile");
+leftArrowMobile.classList.add("arrow-disabled");
+let currentItemMobile = 0;
+
+leftArrowMobile.addEventListener("click", () => {
+  // move to the previous item in the userFurnitureReviews array
+  if (currentItemMobile <= 0) {
+    leftArrowMobile.classList.add("arrow-disabled");
+  }
+  else {
+    leftArrowMobile.classList.remove("arrow-disabled");
+    rightArrowMobile.classList.remove("arrow-disabled");
+  }
+  userFurnitureReviewsMobile.forEach((review, index) => {
+    if (review.classList.contains("user-review-current-mobile")) {
+      currentItemMobile = index;
+      review.classList.remove("user-review-current-mobile");
+      review.classList.add("user-review")
+    }
+  }
+  );
+  currentItemMobile -= 1;
+  userFurnitureReviewsMobile[currentItemMobile].classList.remove("user-review");
+  userFurnitureReviewsMobile[currentItemMobile].classList.add("user-review-current-mobile");
+  if (currentItemMobile <= 0) {
+    leftArrowMobile.classList.add("arrow-disabled");
+  }
+  else {
+    leftArrowMobile.classList.remove("arrow-disabled");
+    rightArrowMobile.classList.remove("arrow-disabled");
+  }
+  console.log(currentItemMobile);
+}
+);
+
+rightArrowMobile.addEventListener("click", () => {
+  // move to the next item in the userFurnitureReviews array
+  if (currentItemMobile >= userFurnitureReviewsMobile.length - 1) {
+    currentItemMobile = userFurnitureReviewsMobile.length - 1;
+    rightArrowMobile.classList.add("arrow-disabled");
+  }
+  else {
+    rightArrowMobile.classList.remove("arrow-disabled");
+    leftArrowMobile.classList.remove("arrow-disabled");
+  }
+  userFurnitureReviewsMobile.forEach((review, index) => {
+    if (review.classList.contains("user-review-current-mobile")) {
+      currentItemMobile = index;
+      review.classList.remove("user-review-current-mobile");
+      review.classList.add("user-review")
+    }
+  }
+  );
+  currentItemMobile += 1;
+  userFurnitureReviewsMobile[currentItemMobile].classList.remove("user-review");
+  userFurnitureReviewsMobile[currentItemMobile].classList.add("user-review-current-mobile");
+  if (currentItemMobile >= userFurnitureReviewsMobile.length - 1) {
+    rightArrowMobile.classList.add("arrow-disabled");
+  }
+  else {
+    rightArrowMobile.classList.remove("arrow-disabled");
+    leftArrowMobile.classList.remove("arrow-disabled");
+  }
+  console.log(currentItemMobile)
+}
+);
 
