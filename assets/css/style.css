@@ -72,6 +72,12 @@ h2 {
   font-size: 20px;
   height: 82px;
 }
+.input-field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 14px;
+}
 .input:focus {
   outline: none;
 }
@@ -219,7 +225,7 @@ h2 {
   overflow: hidden; */
   display: grid;
   grid-auto-flow: column;
-  //grid-auto-columns: calc((100% / 3) - 12px);
+  /* //grid-auto-columns: calc((100% / 3) - 12px); */
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   gap: 16px;
@@ -581,6 +587,43 @@ td {
   .navbar {
     display: none;
   }
+  .navbar-mobile {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+  }
+  .collapse-icon {
+    cursor: pointer;
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .navbar-mobile-show {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    margin: 0 auto;
+    width: 100px;
+    font-size: 10px;
+    right: 0;
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid #dbdbdb;
+  }
+  .navbar-mobile-item {
+    padding: 0.5rem 0.5rem;
+    column-gap: 0.5rem;
+    border-radius: 1em;
+  }
+  .navbar-mobile-item:hover {
+    background-color: #f2a156 ;
+    transition: ease-in-out 0.3s;
+    cursor: pointer;
+    color: white;
+  }
   .logo-mobile {
     display: block;
   }
@@ -615,9 +658,7 @@ td {
     height: 45px;
   }
   .input-field {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    column-gap: 8px;
   }
   .button {
     padding: 0.5rem 0.5rem;
@@ -668,6 +709,11 @@ td {
     grid-template-columns: repeat(2, 165px);
     column-gap: 12px;
     row-gap: 11px;
+    max-height: 556px;
+    overflow-y: scroll;
+  }
+  .all-products::-webkit-scrollbar {
+    display: none;
   }
   .thumbnail {
     width: 151.35px;
@@ -782,7 +828,7 @@ td {
     width: 109px;
   }
   .shop-now-title h1 {
-    font-size: 21px;
+    font-size: 20px;
   }
 
   .collection {
@@ -858,6 +904,9 @@ td {
     display: flex;
     flex-direction: column;
     row-gap: 0.5rem;
+  }
+  .left-arrow-mobile, .right-arrow-mobile {
+    cursor: pointer;
   }
   .review-arrow {
     display: flex;
