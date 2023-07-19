@@ -565,7 +565,7 @@ td {
     width: 1440px;
   }
 }
-@media screen and (max-width: 392px) {
+@media screen and (max-width: 400px) {
   body {
     width: 100%;
     margin: 0 auto;
